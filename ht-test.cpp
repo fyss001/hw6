@@ -17,13 +17,23 @@ int main()
         std::hash<std::string>, 
         std::equal_to<std::string> > ht(0.7, dh);
 
+    /*LinearProber<std::string> dh;
+    HashTable<
+        std::string, 
+        int, 
+        LinearProber<std::string>, 
+        std::hash<std::string>, 
+        std::equal_to<std::string> > ht(0.7, dh);*/
+
     // This is just arbitrary code. Change it to test whatever you like about your 
     // hash table implementation.
     for(size_t i = 0; i < 10; i++){
+        //cout<<"**"<<i<<endl;
         std::stringstream ss;
         ss << "hi" << i;
         ht.insert({ss.str(), i});
     }
+
     if( ht.find("hi1") != nullptr ){
         cout << "Found hi1" << endl;
         ht["hi1"] += 1;
